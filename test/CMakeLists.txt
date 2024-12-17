@@ -26,7 +26,10 @@ macro(add_google_test name)
     ${TEST_NAME} PRIVATE 
       "${CMAKE_SOURCE_DIR}/deps/eigen"
   )
-
+  target_include_directories(
+    ${TEST_NAME} PRIVATE 
+      "${CMAKE_SOURCE_DIR}/deps/amgcl"
+  )
 
 
   target_link_libraries(
@@ -74,9 +77,8 @@ endmacro()
 
 
 
-add_google_test(grid1D_test)
-add_google_test(grid2D_test)
-add_google_test(splitx_test)
-add_google_test(splitting_solver_FactoryWithSource)
-add_google_test(splitting_solver_SimpleProblem)
-add_google_test(splitting_solver_SelfSimilarProblem)
+add_google_test(ConGraphCart1D_test)
+add_google_test(ConGraphCart2D_test)
+add_google_test(SparsityPattern_test)
+# add_google_test(MatrixCSR_test)
+# add_google_test(LinProblem_test)

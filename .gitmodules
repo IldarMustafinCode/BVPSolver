@@ -1,3 +1,9 @@
 [submodule "deps/eigen"]
 	path = deps/eigen
 	url = https://gitlab.com/libeigen/eigen
+[submodule "deps/amgcl"]
+	path = deps/amgcl
+	url = https://github.com/ddemidov/amgcl
+[submodule "deps/googletest"]
+	path = deps/googletest
+	url = https://github.com/google/googletest

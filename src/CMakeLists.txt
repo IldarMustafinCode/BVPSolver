@@ -11,6 +11,7 @@ add_executable(${project} main.cpp)
 #   )
 
 
+
 # target_include_directories(
 #       ${project} PUBLIC
 #       "${PROJECT_SOURCE_DIR}/deps/eigen"
@@ -19,4 +20,9 @@ add_executable(${project} main.cpp)
 target_include_directories(
     ${project} PRIVATE 
       "${PROJECT_SOURCE_DIR}/deps/eigen"
+  )
+
+  target_include_directories(
+    ${project} PRIVATE 
+      "${PROJECT_SOURCE_DIR}/deps/amgcl"
   )

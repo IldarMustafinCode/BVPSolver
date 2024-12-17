@@ -41,11 +41,11 @@ namespace linear_problem
 
 		SparsityPattern() noexcept;
 		SparsityPattern(const unsigned char eqNmbr_, const size_t cellNmbr,
-						const std::vector<std::vector<int>> &connectivityGraph, // const std::vector<int>& neighbours,
+						const std::vector<std::vector<size_t>> &connectivityGraph, // const std::vector<int>& neighbours,
 						const std::vector<bool> &blPattern);
 
-		SparsityPattern(const unsigned char eqNmbr_, const int cellNmbr,
-						const std::vector<std::vector<int>> &connectivityGraph);
+		SparsityPattern(const unsigned char eqNmbr_, const size_t cellNmbr,
+						const std::vector<std::vector<size_t>> &connectivityGraph);
 
 	private:
 		template <typename stream>

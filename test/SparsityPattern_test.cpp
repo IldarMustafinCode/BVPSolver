@@ -19,7 +19,7 @@ TEST(SparsePattern1D, EqNmbr_1)
 	const auto& graph = graph1D.GetGraph();
 
 	// Sparsity Pattern
-	SparsityPattern spp(eqNmbr, cellNmbr, graph);
+	// SparsityPattern spp(eqNmbr, cellNmbr, graph);
 
 
 

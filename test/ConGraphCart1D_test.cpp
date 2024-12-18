@@ -22,12 +22,9 @@ TEST(ConGraph1D, PointNmbr_1)
 
 TEST(ConGraph1D, PointNmbr_2)
 {
-	std::vector<int>
-		nb1 = {1},
-		nb2{0};
 
 	ConnGraphCart1D graph1D(2);
-	auto graph = graph1D.GetGraph();
+	const auto& graph = graph1D.GetGraph();
 
 	ASSERT_EQ(graph[0][0], 1);
 	ASSERT_EQ(graph[1][0], 0);
@@ -40,16 +37,16 @@ TEST(ConGraph1D, PointNmbr_2)
 TEST(ConGraph1D, PointNmbr_6)
 {
 
-	std::vector<std::vector<int>>
+	std::vector<std::vector<size_t>>
 		cntrl{{1}, {0, 2}, {1, 3}, {2, 4}, {3, 5}, {4}};
 	auto Nx = cntrl.size();
 
 	ConnGraphCart1D graph1D(Nx);
-	auto graph = graph1D.GetGraph();
+	const auto& graph = graph1D.GetGraph();
 
-	for (size_t ix = 0; ix < Nx; ix++)
+	for (size_t ix = 0; ix < Nx; ++ix)
 	{
-		for (int in = 0; in < cntrl[ix].size(); in++)
+		for (size_t in = 0; in < cntrl[ix].size(); ++in)
 		{
 			ASSERT_EQ(graph[ix][in], cntrl[ix][in]);
 		}

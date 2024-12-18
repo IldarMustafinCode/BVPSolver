@@ -8,13 +8,13 @@ namespace linear_problem
 	class ConnGraph
 	{
 	protected:
-		std::vector<std::vector<int>> connectivityGraph;
+		std::vector<std::vector<size_t>> connectivityGraph;
 
 	public:
 		ConnGraph() = default;
 		ConnGraph(ConnGraph &) = default;
 
-		const std::vector<std::vector<int>> &GetGraph() const
+		const std::vector<std::vector<size_t>> &GetGraph() const
 		{
 			return connectivityGraph;
 		}
@@ -25,7 +25,7 @@ namespace linear_problem
 			std::ofstream myfile;
 			myfile.open("test_connections.txt");
 
-			for (int l = 0; l < connectivityGraph.size(); l++)
+			for (size_t l = 0; l < connectivityGraph.size(); l++)
 			{
 				for (auto neighbourId : connectivityGraph[l])
 				{
@@ -53,7 +53,7 @@ namespace linear_problem
 			for (size_t ix = 0; ix < Nx; ++ix)
 			{
 				// array of neighboring cell numbers
-				std::vector<int> neighbours;
+				std::vector<size_t> neighbours;
 
 				if (ix > 0)
 				{
@@ -65,7 +65,7 @@ namespace linear_problem
 					neighbours.push_back(i_cell + 1);
 				}
 
-				connectivityGraph.push_back(neighbours);;
+				connectivityGraph.push_back(neighbours);
 				++i_cell;
 			}
 		}
@@ -92,7 +92,7 @@ namespace linear_problem
 				for (size_t ix = 0; ix < Nx; ++ix)
 				{
 					// array of neighboring cell numbers
-					std::vector<int> neighbours;
+					std::vector<size_t> neighbours;
 
 					if (ix > 0)
 					{
@@ -143,7 +143,7 @@ namespace linear_problem
 					for (size_t ix = 0; ix < Nx; ++ix)
 					{
 						// array of neighboring cell numbers
-						std::vector<int> neighbours;
+						std::vector<size_t> neighbours;
 
 						if (ix > 0)
 						{ // the cell, previous in X direction

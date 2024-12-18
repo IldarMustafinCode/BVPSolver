@@ -11,12 +11,12 @@ using namespace linear_problem;
 TEST(SparsePattern1D, EqNmbr_1)
 {
 	unsigned char eqNmbr = 1;
-	int cellNmbr = 5;
+	size_t cellNmbr = 5;
 
 	// Connectivity Graph
 	size_t Nx = 1;
 	ConnGraphCart1D graph1D(Nx);
-	auto graph = graph1D.GetGraph();
+	const auto& graph = graph1D.GetGraph();
 
 	// Sparsity Pattern
 	SparsityPattern spp(eqNmbr, cellNmbr, graph);

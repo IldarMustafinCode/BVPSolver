@@ -163,7 +163,7 @@ namespace linear_problem
 
 	SparsityPattern::SparsityPattern(
 		const unsigned char eqNmbr_,
-		const int cellNmbr,
+		const size_t cellNmbr,
 		const std::vector<std::vector<int>> &connectivityGraph)
 		: SparsityPattern(
 			  eqNmbr_, cellNmbr,
